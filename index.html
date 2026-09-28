@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toronto Neighborhoods Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Control Panel -->
+  <div id="control-panel">
+    <div class="panel-title"><b>Select Metric</b></div>
+    <div class="checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="metric" value="density_benches" checked>
+        Bench density
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="metric" value="density_pee">
+        Toilets density
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="metric" value="density_poi">
+        Points of Interest density
+      </label>
+    </div>
+  </div>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Custom Script -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

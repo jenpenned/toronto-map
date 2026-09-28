@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+.leaflet-container path:focus {
+  outline: none;
+}
+
+/* Info Box */
+.info {
+  padding: 10px 14px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+/* Legend Styling */
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+#control-panel {
+  position: absolute;
+  top: 15px;
+  left: 60px; /* Sits next to Leaflet zoom controls */
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+.panel-title {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Checkbox Layout */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  color: #444;
+}
+
+.checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #238b45; /* Modern checkbox highlight color */
+}
+
+/* Hover Info Box */
+.info {
+  padding: 10px 14px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+/* Legend Styling */
+.legend {
+  line-height: 18px;
+  color: #555;
+}
+
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.hover-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 6px 10px;
+  pointer-events: none; /* Allows click events on the map underlying features */
+}
