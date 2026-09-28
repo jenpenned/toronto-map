@@ -1,7 +1,6 @@
 // ==========================================
 // 1. CONFIG & METADATA
 // ==========================================
-const apiKey = CONFIG.API_KEY;
 const NAME_FIELD = 'AREA_NAME';
 
 const METRICS = {
@@ -33,9 +32,10 @@ let geojsonDataStore = null;
 // ==========================================
 const map = L.map('map').setView([43.70, -79.42], 11);
 
-L.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=${apiKey}`, {
-  maxZoom: 19,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  subdomains: 'abcd',
+  maxZoom: 19
 }).addTo(map);
 
 // ==========================================
