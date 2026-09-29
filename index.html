@@ -14,23 +14,26 @@
 <body>
 
   <!-- Control Panel -->
-  <div id="control-panel">
-    <div class="panel-title"><b>Select Metric</b></div>
-    <div class="checkbox-group">
-      <label class="checkbox-label">
-        <input type="checkbox" name="metric" value="density_benches" checked>
-        Bench density
-      </label>
-      <label class="checkbox-label">
-        <input type="checkbox" name="metric" value="density_pee">
-        Toilets density
-      </label>
-      <label class="checkbox-label">
-        <input type="checkbox" name="metric" value="density_poi">
-        Points of Interest density
-      </label>
+<div id="control-panel">
+    <div class="control-panel-inner">
+      <div class="panel-title"><b>Select Metric:</b></div>
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" name="metric" value="density_benches" checked>
+          Benches
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="metric" value="density_pee">
+          Public Toilets
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" name="metric" value="density_poi">
+          Points of Interest
+        </label>
+      </div>
     </div>
   </div>
+
 
   <!-- Map Container -->
   <div id="map"></div>

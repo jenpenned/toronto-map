@@ -5,18 +5,18 @@ const NAME_FIELD = 'AREA_NAME';
 
 const METRICS = {
   density_benches: {
-    label: 'Bench Density',
-    unit: 'benches per sq km',
+    label: '# per sq km',
+    unit: '',
     colors: ['#FFEDA0', '#FEB24C', '#FD8D3C', '#E31A1C', '#800026']
   },
   density_pee: {
-    label: 'Toilets Density',
-    unit: 'toilets per sq km',
+    label: '# per sq km',
+    unit: '',
     colors: ['#edf8fb', '#99d8c9', '#66c2a4', '#238b45', '#005824']
   },
   density_poi: {
-    label: 'Points of Interest Density',
-    unit: 'points of interest per sq km',
+    label: '# per sq km',
+    unit: '',
     colors: ['#fef0d9', '#fdbb84', '#fc8d59', '#b30000', '#7f0000']
   }
 };
@@ -36,6 +36,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 19
 }).addTo(map);
+
+const controlPanel = L.control({ position: 'topleft' });
+
+controlPanel.onAdd = function (map) {
+  // Select the existing control-panel element or create it dynamically
+  const div = L.DomUtil.get('control-panel') || L.DomUtil.create('div', '', 'control-panel');
+
+  // Disable map drag/zoom when interacting with the control panel elements
+  L.DomEvent.disableClickPropagation(div);
+  L.DomEvent.disableScrollPropagation(div);
+
+  return div;
+};
+
+// Add the control to the map
+controlPanel.addTo(map);
 
 // ==========================================
 // 3. DYNAMIC SCALE CALCULATIONS
@@ -140,7 +156,7 @@ function onEachFeature(feature, layer) {
 // ==========================================
 // 5. MAP UI CONTROLS (LEGEND)
 // ==========================================
-const legend = L.control({ position: 'bottomright' });
+const legend = L.control({ position: 'topright' });
 
 legend.onAdd = function () {
   this._div = L.DomUtil.create('div', 'info legend');
@@ -150,7 +166,7 @@ legend.onAdd = function () {
 
 legend.update = function () {
   const { label, unit, colors } = METRICS[currentMetric];
-  let html = `<b>${label} (${unit})</b><br>`;
+  let html = `<b>${label} ${unit}</b><br>`;
 
   for (let i = 0; i < currentGrades.length; i++) {
     const from = currentGrades[i];

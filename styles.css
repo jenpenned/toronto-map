@@ -13,21 +13,6 @@ body {
   outline: none;
 }
 
-/* Info Box */
-.info {
-  padding: 10px 14px;
-  font: 14px/16px Arial, Helvetica, sans-serif;
-  background: white;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
-.info h4 {
-  margin: 0 0 5px;
-  color: #777;
-}
-
 /* Legend Styling */
 .legend {
   line-height: 18px;
@@ -42,43 +27,58 @@ body {
   opacity: 0.7;
 }
 
-#control-panel {
+.leaflet-top.leaflet-left #control-panel {
   position: absolute;
-  top: 15px;
-  left: 60px; /* Sits next to Leaflet zoom controls */
-  z-index: 1000;
+  top: 10px;
+  left: 50px;                   /* Sits to the right of the zoom box */
+  margin: 0 !important;
   background: rgba(255, 255, 255, 0.95);
-  padding: 12px 16px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  max-width: calc(100vw - 110px);
+  pointer-events: auto;
+}
+
+/* Maintain horizontal flex layout */
+#control-panel .control-panel-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 16px !important;
 }
 
 .panel-title {
-  margin-bottom: 8px;
+  margin: 0;
   color: #333;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
-/* Checkbox Layout */
 .checkbox-group {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .checkbox-label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
   user-select: none;
   font-size: 13px;
   color: #444;
+  white-space: nowrap;
 }
 
 .checkbox-label input[type="checkbox"] {
   cursor: pointer;
-  accent-color: #238b45; /* Modern checkbox highlight color */
+  accent-color: #238b45;
+  margin: 0;
 }
 
 /* Hover Info Box */
@@ -96,16 +96,18 @@ body {
 }
 
 /* Legend Styling */
+
 .legend {
   line-height: 18px;
   color: #555;
+  margin-top: 10px !important;
+  margin-right: 10px !important;
 }
 
 .legend i {
   width: 18px;
-  height: 18px;
   float: left;
-  margin-right: 8px;
+  margin-right: 10px;
   opacity: 0.7;
 }
 
