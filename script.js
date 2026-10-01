@@ -53,6 +53,13 @@ controlPanel.onAdd = function (map) {
 // Add the control to the map
 controlPanel.addTo(map);
 
+L.control.scale({
+  imperial: false,  // Disables miles/feet
+  metric: true,     // Enables kilometers/meters
+  maxWidth: 150,    // Adjusts bar width in pixels
+  position: 'bottomleft'
+}).addTo(map);
+
 // ==========================================
 // 3. DYNAMIC SCALE CALCULATIONS
 // ==========================================
